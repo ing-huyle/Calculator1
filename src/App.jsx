@@ -46,7 +46,7 @@ const App = () => {
     const limiter = 'DIGIT LIMIT MET';
 
     if (display !== limiter) {
-      if (display.length < 22) {
+      if (display.length < 21) {
         setExpression((prev) => (prev.includes('=') || (prev.startsWith('0') && !prev.includes('.') && !operatorsDot.includes(prev[prev.length - 1]))) ? number : prev + number);
         setDisplay((prev) => (expression.includes('=') || operatorsX.includes(prev) || (prev.startsWith('0') && !prev.includes('.'))) ? number : prev + number);
       } else {
