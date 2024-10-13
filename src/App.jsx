@@ -1,9 +1,13 @@
 import './styles/App.scss';
 import { useState } from 'react';
 
-const App = () => {
-  const operatorsX = ['/', 'x', '-', '+'];
-  const operatorsDot = ['/', '⋅', '-', '+'];
+const operatorsX = ['/', 'x', '-', '+'];
+const operatorsDot = ['/', '⋅', '-', '+'];
+const limiter = 'DIGIT LIMIT MET';
+
+const formatOperator = (operator) => operator === 'x' ? '⋅' : operator;
+
+const App = () => {  
   const [expression, setExpression] = useState('');
   const [display, setDisplay] = useState('0');
 
@@ -14,7 +18,6 @@ const App = () => {
 
   const handleClickOperator = (event) => {
     const operator = event.target.textContent;
-    const formatOperator = (operator) => operator === 'x' ? '⋅' : operator;
 
     setExpression((prev) => {
       if (prev.includes('=')) {
@@ -43,7 +46,6 @@ const App = () => {
 
   const handleClickNumber = (event) => {
     const number = event.target.textContent;
-    const limiter = 'DIGIT LIMIT MET';
 
     if (display !== limiter) {
       if (display.length < 21) {
