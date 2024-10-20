@@ -104,6 +104,9 @@ const App = () => {
         <div id='zero' className='key number' onClick={handleClickNumber}>0</div>
         <div id='decimal' className='key number' onClick={handleClickDecimal}>.</div>
       </div>
+      <p>Coded by<a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing.huyle</a><br/>
+        Designed by freeCodeCamp
+      </p>
     </div>
   )
 }
